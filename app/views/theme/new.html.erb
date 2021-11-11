@@ -1,0 +1,10 @@
+<h1>New theme</h1>
+
+<%= form_with model: @theme do |f| %>
+
+
+  <%= f.label :name_of_theme%>
+  <%= f.text_field :name_of_theme,required:true,minlength:4,placeholder:"Name_of_theme" %>
+
+  <%= f.submit "Submit theme" %>
+<% end %>

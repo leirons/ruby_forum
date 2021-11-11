@@ -1,0 +1,27 @@
+<!--Simple HTML, it's a main page on forum, it would be good to know ho to do same layout for every page -->
+
+
+<!--TODO-->
+<ul>
+  <% if user_signed_in? %>
+    <%= link_to "Edit Profile", edit_user_registration_path,class:"nav-link" %>
+    <%= link_to "Sign Out", destroy_user_session_path,method: :delete,class:"nav-link" %>
+ <%else %>
+    <a href="users/sign_up">Регистрация</a></li>
+    <a href="users/sign_in">Вход</a>
+  <%end%>
+
+  <% if current_user.admin%>
+    <Admin></Admin>
+  <%end%>
+
+</ul>
+<!--TODO-->
+
+
+<% @theme.each do |theme|%>
+  <center>
+    <p><%= theme.name_of_theme %></p>
+    <br>
+  </center>
+<% end %>
