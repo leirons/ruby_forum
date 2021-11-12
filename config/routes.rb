@@ -4,8 +4,11 @@ Rails.application.routes.draw do
 
   get '/forum', to: "theme#index"
 
+  get '/forum/admin_panel', to: "admin#index"
+
   get '/forum/new_theme', to:"theme#new"
 
   post '/forum/new_theme', to:"theme#create"
+
 
 end
