@@ -1,0 +1,15 @@
+<h1>Edit post</h1>
+
+
+  <%= form_with model: @post_update_path do |f| %>
+
+    <%= f.label :name_of_post%>
+    <%= f.text_field :name_of_post,required:true,minlength:4,placeholder:"Name_of_post" %>
+
+    <br>
+    <%= f.label :body%>
+    <%= f.text_field :body,required:true,placeholder:"Name_of_post" %>
+
+  <br>
+  <%= f.submit "Submit theme" %>
+  <% end %>

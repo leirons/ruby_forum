@@ -9,7 +9,6 @@ class ThemeController < ApplicationController
   end
 
   def edit
-    puts "Вызвана"
     @theme = Theme.find_by id: params[:id]
   end
 
@@ -20,7 +19,6 @@ class ThemeController < ApplicationController
   end
 
   def update
-    puts "Я вызвана"
     @theme = Theme.find_by id: params[:id]
     if @theme.update name_of_theme:params.require(:name_of_theme)
       redirect_to forum_path

@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
   def index
-    u = User.all
+    @u = User.all
   end
 end

@@ -7,6 +7,13 @@ Rails.application.routes.draw do
 
   get '/forum/admin_panel', to: "admin#index", as: "admin_panel"
 
+  get '/forum/:id/post', to: "post#index", as: "post"
+
+  get '/forum/:id/post/edit', to: "post#edit", as: "post_edit"
+
+  post '/forum/:id/post/edit', to: "post#update", as: "post_update"
+
+
   get '/forum/:id/edit', to:"theme#edit", as: 'theme_edit'
 
   post '/forum/:id/edit', to:"theme#update", as: 'theme_update'

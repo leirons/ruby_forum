@@ -1,0 +1,25 @@
+
+<center>
+<% @post.each do |post|%>
+
+  <br>
+    Название поста:
+  <p><%= post.name_of_post %></p>
+    <br>
+    Описание:
+  <%= post.body %>
+    <br>
+    <% if current_user.id == post.user_id %>
+       <%= link_to "Edit",post_edit_path(post) %>
+    <%end%>
+    Обсуждение:
+
+
+
+
+<%end %>
+
+<br>
+Комментарии:
+
+</center>

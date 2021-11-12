@@ -19,6 +19,7 @@
   <center>
     <p><%= theme.name_of_theme %></p>
     <% if current_user.admin%>
+      <%= link_to theme.name_of_theme,post_path(theme) %>
       <%= link_to "Edit",theme_edit_path(theme) %>
       <%= link_to "Delete",theme_delete_path(theme),data: {method: :delete,confirm:"Уверен?"} %>
   <%end%>
