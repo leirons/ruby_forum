@@ -18,6 +18,9 @@
 <% @theme.each do |theme|%>
   <center>
     <p><%= theme.name_of_theme %></p>
+    <% if current_user.admin%>
+      <%= link_to "Edit",theme_edit_path(theme) %>
+    <%end%>
     <br>
   </center>
 <% end %>

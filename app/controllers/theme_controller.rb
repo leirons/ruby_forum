@@ -8,6 +8,19 @@ class ThemeController < ApplicationController
     @new_theme = Theme.new   # Темы для обсуждения может создавать только администратор/модератор, будет сделано
   end
 
+  def edit
+    puts "Вызвана"
+    @theme = Theme.find_by id: params[:id]
+  end
+
+  def update
+    puts "Я вызвана"
+    @theme = Theme.find_by id: params[:id]
+    if @theme.update name_of_theme:params.require(:name_of_theme)
+      puts "YEE"
+    end
+  end
+
   def create
     @new_theme = Theme.new name_of_theme:params.require(:name_of_theme)
     if @new_theme.save

@@ -5,7 +5,7 @@ class PostController < ApplicationController
   end
 
   def new
-    @new_theme = Theme.new   # Темы для обсуждения может создавать только администратор/модератор, будет сделано
+    @new_theme = Post.new   #
   end
 
 end
