@@ -2,14 +2,17 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get '/forum', to: "theme#index"
+  get '/forum', to: "theme#index", as: "forum"
 
 
-  get '/forum/admin_panel', to: "admin#index"
+  get '/forum/admin_panel', to: "admin#index", as: "admin_panel"
 
   get '/forum/:id/edit', to:"theme#edit", as: 'theme_edit'
 
   post '/forum/:id/edit', to:"theme#update", as: 'theme_update'
+
+
+  delete '/forum/:id/delete', to:"theme#delete", as: 'theme_delete'
 
 
 

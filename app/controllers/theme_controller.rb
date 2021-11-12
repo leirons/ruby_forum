@@ -13,18 +13,24 @@ class ThemeController < ApplicationController
     @theme = Theme.find_by id: params[:id]
   end
 
+  def delete
+    @theme = Theme.find_by id: params[:id]
+    @theme.destroy
+    redirect_to forum_path
+  end
+
   def update
     puts "Я вызвана"
     @theme = Theme.find_by id: params[:id]
     if @theme.update name_of_theme:params.require(:name_of_theme)
-      puts "YEE"
+      redirect_to forum_path
     end
   end
 
   def create
     @new_theme = Theme.new name_of_theme:params.require(:name_of_theme)
     if @new_theme.save
-      # Сделать редирект
+      redirect_to forum_path
     end
   end
 

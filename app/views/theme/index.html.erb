@@ -20,7 +20,8 @@
     <p><%= theme.name_of_theme %></p>
     <% if current_user.admin%>
       <%= link_to "Edit",theme_edit_path(theme) %>
-    <%end%>
+      <%= link_to "Delete",theme_delete_path(theme),data: {method: :delete,confirm:"Уверен?"} %>
+  <%end%>
     <br>
   </center>
 <% end %>
