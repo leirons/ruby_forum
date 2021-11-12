@@ -11,7 +11,7 @@ class ThemeController < ApplicationController
   def create
     @new_theme = Theme.new name_of_theme:params.require(:name_of_theme)
     if @new_theme.save
-      redirect_to
+      # Сделать редирект
     end
   end
 

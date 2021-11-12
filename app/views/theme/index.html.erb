@@ -1,19 +1,19 @@
-<!--Simple HTML, it's a main page on forum, it would be good to know ho to do same layout for every page -->
 
 
-<!--TODO-->
+<!--TODO  сделать для каждой страницы, что бы подгружало само-->
 <ul>
   <% if user_signed_in? %>
     <%= link_to "Edit Profile", edit_user_registration_path,class:"nav-link" %>
     <%= link_to "Sign Out", destroy_user_session_path,method: :delete,class:"nav-link" %>
  <%else %>
+<!--Для проверки разные способы, как я понял верхний лучше-->
     <a href="users/sign_up">Регистрация</a></li>
     <a href="users/sign_in">Вход</a>
   <%end%>
 
   <% if current_user.admin%>
-    <Admin></Admin>
-  <%end%>
+    <a href="new_theme">Создать новую тему</a></li>
+<%end%>
 
 </ul>
 <!--TODO-->
